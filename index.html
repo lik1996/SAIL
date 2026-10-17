@@ -288,37 +288,117 @@
 <!-- End paper abstract -->
 
 
+<!-- Method -->
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Method</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            We propose SAIL, a novel end-to-end MLLM-based framework that leverages anchor identity and shift refinement for the Ref-AVS task. Specifically, we introduce a temporal [seg] token to capture frame-specific focus and a global [query] token to establish a persistent semantic anchor for the referred object. By explicitly modeling the variance across visual and auditory modalities, our framework quantifies potential target drift through a dedicated shift-estimation mechanism. Finally, these shift-refined embeddings are integrated with a weighted global anchor and then fed into a mask decoder. By synchronizing these refined features with a continuous memory bank update, SAIL effectively mitigates target shift and ensures spatio-temporal identity consistency for mask prediction.
+          </p>
+        </div>
+
+        <div class="has-text-centered">
+          <img
+            src="static/images/framework3.png"
+            alt="Overview of the proposed framework"
+            style="width: 100%; max-width: 1100px;"
+          >
+        </div>
+
+        <div class="content has-text-justified mt-4">
+          <p>
+            <b>Overview of the proposed SAIL framework.</b>
+            Our MLLM with LoRA reasons over the unified tri-modal tokens, generating frame-level [seg] tokens for local dynamics and a global [query] token as a semantic anchor. The shift-aware refinement module estimates and rectifies the latent shift by comparing the domain-specific evidence with the anchor's semantics. The mask decoder utilizes the refined embeddings and a memory mechanism to generate consistent mask predictions for the entire video sequence. For brevity, projection units before the decoder are omitted.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- End Method -->
 
 
+<!-- Results -->
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Section title -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Experimental Results</h2>
+      </div>
+    </div>
+
+
+    <!-- Main qualitative results -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+
+        <h3 class="title is-4 has-text-centered">
+          Qualitative Results
+        </h3>
+
+        <div class="content has-text-centered">
+          <img
+            src="static/images/vis-main.png"
+            alt="Qualitative comparison results"
+            style="width: 100%; max-width: 1100px;"
+          >
+        </div>
+
+        <div class="content has-text-justified">
+          <p>
+            <b>Qualitative results of SAIL and baseline from Ref-AVSBench.</b>
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- Quantitative results -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+
+        <h3 class="title is-4 has-text-centered">
+          Quantitative Results
+        </h3>
+
+        <div class="content has-text-centered">
+          <img
+            src="static/images/table 1.png"
+            alt="Quantitative comparison with state-of-the-art methods"
+            style="width: 100%; max-width: 1000px;"
+          >
+        </div>
+
+        <div class="content has-text-justified">
+          <p>
+            <b>Comparison with existing methods on Ref-AVSBench.</b>
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- End Results -->
     
+
 
 <!-- Image carousel -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="static/images/table 1.png" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
-        <h2 class="subtitle has-text-centered">
-          Comparison with existing methods on Ref-AVSBench.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/table2.png" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Comparison on R^2-AVSBench.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/vis-main.png" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Qualitative results of SAIL and baseline from Ref-AVSBench.
-       </h2>
-     </div>
      <div class="item">
       <!-- Your image here -->
       <img src="static/images/seen1.png" alt="Fourth research result visualization" loading="lazy"/>
